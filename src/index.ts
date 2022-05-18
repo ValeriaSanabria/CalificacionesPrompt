@@ -1,8 +1,9 @@
 let notaTotal, notaPractica, notaProblemas, notaTeorica: number;
 let nombreAlumno;
 
-while ((nombreAlumno !=="")) {
-  nombreAlumno = prompt("Ingrese nombre del alumno:"));
+nombreAlumno = prompt("Ingrese nombre del alumno:"));
+
+while (nombreAlumno !=="") {
   console.log("Nombre del alumno: " + nombreAlumno);
   notaPractica = Number(prompt("Ingrese nota de practica"));
   console.log("Su nota practica es: " + notaPractica);
@@ -11,10 +12,12 @@ while ((nombreAlumno !=="")) {
   notaTeorica = Number(prompt("Ingrese nota teorica"));
   console.log("Su nota teorica es: " + notaTeorica);
 
-if (notaPractica <= 10 && notaProblemas <= 10 && notaTeorica <= 10) {
-  notaTotal = notaPractica * 0.1 + notaProblemas * 0.5 + notaTeorica * 0.4;
-  console.log(notaTotal);
-} else {
-  console.log("Error, el dato ingresado es incorrecto");
-}
+  if (notaPractica <= 10 && notaProblemas <= 10 && notaTeorica <= 10 && 
+      notaPractica >= 0 && notaProblemas >= 0 && notaTeorica >= 0) {
+    notaTotal = notaPractica * 0.1 + notaProblemas * 0.5 + notaTeorica * 0.4;
+    console.log(notaTotal);
+  } else {
+    console.log("Error, el dato ingresado es incorrecto");
+  }
+  nombreAlumno = prompt("Ingrese nombre del alumno:"));
 }
